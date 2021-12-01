@@ -1,44 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# React-redux-toolkit-saga-typescript
 
-## Available Scripts
+## Create project
 
-In the project directory, you can run:
+### Using YARN:
 
-### `yarn start`
+```tsx
+yarn create react-app <*project-name*> --template redux-typescript
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Using NPM:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```tsx
+npx create-react-app <*project-name*> --template redux-typescript
+```
 
-### `yarn test`
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Start project
 
-### `yarn build`
+### Yarn:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```tsx
+yarn start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Npm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```tsx
+npm start
+```
 
-### `yarn eject`
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%201.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%202.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Configuration project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### BaseUrl
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Add the `"baseUrl": "./src"` in the *tsconfig.json* file
 
-## Learn More
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%203.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prettier config (option)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create the Prettier config file in root folder project `/.prettierrc`
+
+Go to [https://prettier.io/playground/](https://prettier.io/playground/) to render a config json online and paste to `.prettierrc` file
+
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%204.png)
+
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%205.png)
+
+## Add Redux Saga
+
+### Installation
+
+```tsx
+yarn add redux-saga
+```
+
+or
+
+```tsx
+npm install redux-saga
+```
+
+### Create a Saga middleware
+
+Create a Saga Middleware and then, add this to default Redux's middleware 
+
+```tsx
+import createSagaMiddleware from 'redux-saga';
+
+const sagaMiddleware = createSagaMiddleware();
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
+});
+
+sagaMiddleware.run(rootSaga);
+```
+
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f194005181188
