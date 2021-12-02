@@ -84,4 +84,4 @@ export const store = configureStore({
 sagaMiddleware.run(rootSaga);
 ```
 
-![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f194005181188
+![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%206.png)
