@@ -122,7 +122,4 @@ See more Effect Creator: [https://redux-saga.js.org/docs/api/#effect-creators](h
 
 ### Create _Add async saga_ button
 
-![Untitled](Images/Untitled%2011.png)
-=======
-![Untitled](React-redux-toolkit-saga-typescript%206c20ca60030646dfa5f1940051811884/Untitled%206.png)
->>>>>>> 4f61e9ef1d53a2e22a81770436069ed0299f7946
+# ![Untitled](Images/Untitled%2011.png)
